@@ -10,9 +10,18 @@
 1. 基于 mxflutter-js 前端框架，使用  TypeScript 语言，以类似 Flutter 的 Widget 组装方式开发UI，借助前端生态的基础能力，开发App。（前端框架已开源: [github:mxflutter-js](https://github.com/mxflutter/mxflutter-js)）
 2. 不改变现有 Flutter 的开发方式，使用 MXJSCompiler 把现有工程编译为JS，运行在 mxflutter 框架之上。（ MXJSCompiler JS编译工具在开源计划中 ）
 
+
 可以安装 Android的包来体验  [MXFlutter_v0-1-2.apk](https://github.com/TGIF-iMatrix/MXFlutter/releases/download/v0.1.2-beta/MXFlutter_v0-1-2.apk)。
 
 接入的详细步骤，请参阅 [mxflutter 接入指南](Documentation/接入指南.md)
+
+#### 版本对应关系
+
+| v0.9.0 | Flutter 1.22.3 |
+| --- | --- |
+| V0.8.0 | Flutter 1.20.3  |
+
+
 
 ##### **重要提示：MXFlutter目前处于开发阶段， MXFlutter 针对自己业务用到的 Widget 和 Api 进行了验证和测试，但因 Flutter Widget 数量太多，团队人力有限，无法对所有提供的 Widget 进行支持和功能验证，所以把代码开源出来，有需要的团队可以一起来完善和演进。如在生产环境使用，确保理解MXFlutter运行原理，并对业务使用到的TS Widget进行完整测试，也欢迎贡献测试完成的名单。**
 
