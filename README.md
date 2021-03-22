@@ -19,7 +19,7 @@
 
 | v0.9.0 | Flutter 1.22.3 |
 | --- | --- |
-| V0.8.0 | Flutter 1.20.3  |
+| [v0.8.0](https://github.com/mxflutter/mxflutter) | Flutter 1.20.3  |
 
 
 

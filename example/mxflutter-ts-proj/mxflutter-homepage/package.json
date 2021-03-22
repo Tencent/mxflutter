@@ -1,0 +1,30 @@
+{
+  "version": "0.0.1",
+  "description": "TODO",
+  "keywords": [
+    "mxflutter"
+  ],
+  "license": "BSD",
+  "contributors": [
+    "xsoap <mxflutter@qq.com>"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist lib",
+    "build": "mxflutter build --env production --out ../../mxflutter_js_bundle/mxflutter-homepage --app mxflutter-homepage ./src/index.ts",
+    "build:es5": "mxflutter build --target es5 --env production --out ../../mxflutter_js_bundle/mxflutter-homepage --app mxflutter-homepage ./src/index.ts",
+    "build:ci-es6": "mxflutter build --env production --out ./ci_dist --app mxflutter-homepage ./src/index.ts",
+    "build:ci-es5": "mxflutter build --target es5 --env production --out ./ci_dist --app mxflutter-homepage ./src/index.ts",
+    "build:ci": "npm run build:ci-es6 && npm run build:ci-es5",
+    "dev": "mxflutter build --watch --out ../../mxflutter_js_bundle/mxflutter-homepage --app mxflutter-homepage ./src/index.ts"
+  },
+  "dependencies": {
+    "@mxflutter/mxflutter": "^0.9.0",
+    "@mxflutter/mxflutter-widgets": "^0.9.0"
+  },
+  "devDependencies": {
+    "@mxflutter/mxflutter-toolchain": "^0.9.0",
+    "typescript": "^3.9.5",
+    "@types/node": "^14.0.14",
+    "prettier": "^2.0.5"
+  }
+}

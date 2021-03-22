@@ -1,0 +1,17 @@
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+
+build/
+.idea
+example/.flutter-plugins
+example/.flutter-plugins-dependencies
+.last_build_id
+IDEWorkspaceChecks.plist
+example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+example/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+example/ios/Runner.xcworkspace/contents.xcworkspacedata
+example/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings

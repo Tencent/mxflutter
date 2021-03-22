@@ -1,0 +1,6 @@
+framework module MXFFI {
+  umbrella header "MXFFI.h"
+
+  export *
+  module * { export * }
+}
