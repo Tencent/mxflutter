@@ -29,7 +29,7 @@
 ---
 
 *  [一、介绍](#title1)
-*  [二、演示](#title2)
+*  [二、应用](#title2)
 *  [三、特性](#title3)
 *  [四、设计思路](#title3)
 *  [五、架构](#title4)
@@ -50,10 +50,10 @@ MXFlutter 在前端方向目前已经实现了使用 TypeScript 来编写，使�
 
 MXFlutter 在终端方向的思路使用 MXJSCompiler 把现有 Flutter 工程编译为JS，运行在 MXFlutter 框架之上。以 ReactNative 框架为参照， JS引擎的性能可以支撑大型App的运行。MXJSCompiler 编译工具目前在建设中，会在后续版本稳定之后开源。
 
-## <a name="title2">二、演示</a>
+## <a name="title2">二、应用</a>
 
 
-![](https://github.com/langbluesky/Image/blob/master/demo_0.gif?raw=true)
+![](http://pub.idqqimg.com/pc/misc/files/20210323/43b7751b6b86401ab868c9b50a4c3d67.png)
 
 
 ## <a name="title3">三、特性</a>
