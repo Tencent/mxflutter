@@ -11,7 +11,7 @@
 2. 不改变现有 Flutter 的开发方式，使用 MXJSCompiler 把现有工程编译为JS，运行在 mxflutter 框架之上。（ MXJSCompiler JS编译工具在开源计划中 ）
 
 
-可以安装 Android的包来体验  [MXFlutter_v0-1-2.apk](https://github.com/TGIF-iMatrix/MXFlutter/releases/download/v0.1.2-beta/MXFlutter_v0-1-2.apk)。
+可以安装 Android的包来体验  [MXFlutter_v0-9-0.apk](https://github.com/mxflutter/awesome_mxflutter/releases/download/v0.9.0/awesome-mxflutter-0-9-0.apk)。
 
 接入的详细步骤，请参阅 [mxflutter 接入指南](Documentation/接入指南.md)
 
