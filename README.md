@@ -31,6 +31,7 @@
 | mxflutter_pkg | mxflutter 第三方Package支持的示例 | https://github.com/mxflutter/mxflutter_pkg |
 | awesome_mxflutter | Flutter 示例工程，演示如何运行JS Bundle | https://github.com/mxflutter/awesome_mxflutter |
 | mxflutter-js-demo | JS 示例工程，演示如何使用TS开发Flutter | https://github.com/mxflutter/mxflutter-js-demo |
+| mx_mirror_builder | 辅助工具，用于生成 TS 类定义和 Mirror 映射 | https://github.com/mxflutter/mx_mirror_builder |
 
 
 
