@@ -21,6 +21,18 @@
 | --- | --- |
 | [v0.8.0](https://github.com/mxflutter/mxflutter) | Flutter 1.20.3  |
 
+#### 相关代码库
+
+
+| 代码库 | 简介 | 地址 |
+| --- | --- | --- |
+| mxflutter | Flutter Plugin ，使用JS Bundle 渲染页面 | https://github.com/tencent/mxflutter.git |
+| mxflutter-js | TS 前端框架，支撑使用Flutter Widget 组装方式开发UI | https://github.com/mxflutter/mxflutter-js |
+| mxflutter_pkg | mxflutter 第三方Package支持的示例 | https://github.com/mxflutter/mxflutter_pkg |
+| awesome_mxflutter | Flutter 示例工程，演示如何运行JS Bundle | https://github.com/mxflutter/awesome_mxflutter |
+| mxflutter-js-demo | JS 示例工程，演示如何使用TS开发Flutter | https://github.com/mxflutter/mxflutter-js-demo |
+
+
 
 
 ##### **重要提示：MXFlutter目前处于开发阶段， MXFlutter 针对自己业务用到的 Widget 和 Api 进行了验证和测试，但因 Flutter Widget 数量太多，团队人力有限，无法对所有提供的 Widget 进行支持和功能验证，所以把代码开源出来，有需要的团队可以一起来完善和演进。如在生产环境使用，确保理解MXFlutter运行原理，并对业务使用到的TS Widget进行完整测试，也欢迎贡献测试完成的名单。**
@@ -97,7 +109,7 @@ MXFlutter 框架分为两部分，上层是 TypeScript 开发的 MXFlutter 前�
 
 接入示例工程1 [示例工程](./example)
 
-接入示例工程2 [awesome-mxflutter](./example)
+接入示例工程2 [awesome-mxflutter](https://github.com/mxflutter/awesome_mxflutter)
 
 
 
