@@ -36,8 +36,10 @@ runMXJSApp() async {
   // demo为了演示是每次启动拷贝到js bundle的更新目录，一般只有第一次或版本升级需要拷贝。
   // 业务可以根据自身需求，来判断是否拷贝。此部分逻辑可以写在Dart侧，也可以写在Native侧
   String jsBundlePath = await _copyBizBundelZipToMXPath();
-  //启动 MXFlutter，加载JS库
-  MXJSFlutter.runJSApp(jsAppPath: jsBundlePath);
+  if (jsBundlePath != null) {
+    // 启动 MXFlutter，加载JS库。
+    MXJSFlutter.runJSApp(jsAppPath: jsBundlePath);
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -159,8 +161,20 @@ class MXFlutterExampleHome extends StatelessWidget {
 // 业务可以根据自身需求，来判断是否拷贝。此部分逻辑可以写在Dart侧，也可以写在Native侧
 Future<String> _copyBizBundelZipToMXPath(
     {String jsAppAssetsKey = defaultJSBundleAssetsKey}) async {
+  // 校验存储权限。
+  if (!await _checkStoragePermission()) {
+    MXJSLog.log('MXBundleZipManager::copyBizBundelZipToMXPath: 权限获取失败');
+    return null;
+  }
+
   // 指定一个下载更新JS文件的目录
   String localPath = await MXJSFlutter.defaultJSAppUpdatePath();
+  if (!await _needCopyAppBizBundleZip()) {
+    MXJSLog.log('MXBundleZipManager::copyBizBundelZipToMXPath: 无需拷贝资源 \n'
+        'localPath: $localPath');
+    return localPath;
+  }
+
   try {
     final bizBundleZip = localPath + Platform.pathSeparator + 'bizBundle.zip';
     ByteData bizBundleData = await rootBundle
@@ -190,4 +204,27 @@ Future<String> _copyBizBundelZipToMXPath(
   }
 
   return localPath;
+}
+
+Future<bool> _needCopyAppBizBundleZip() async {
+  // 此处没有做判断，应根据业务需求，来判断是否拷贝。
+  return true;
+}
+
+/// 检查存储权限
+Future<bool> _checkStoragePermission() async {
+  try {
+    // 获取权限。
+    bool permissionReady = await Utils.checkPermission();
+    if (permissionReady) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (e) {
+    MXJSLog.error('MXBundleZipManager::_checkStoragePermission: 检查权限异常 \n'
+        'error: $e');
+
+    return false;
+  }
 }
