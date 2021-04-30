@@ -89,7 +89,7 @@ MXFlutter 在终端方向的思路使用 MXJSCompiler 把现有 Flutter 工程�
 
 
 
-![](https://pub.idqqimg.com/pc/misc/files/20210319/f44416e4fe67435f999c6fbab05fff7f.png)
+![](https://pub.idqqimg.com/pc/misc/files/20210430/e52819dfca7744d68f1d68f5ff05210e.jpg)
 
 
 ## <a name="title6">六、如何使用</a>
