@@ -48,6 +48,10 @@ typedef MXJSExceptionHandler = void Function(dynamic error);
 abstract class MXJSFlutter {
   static MXJSFlutter _instance;
 
+    
+  static String _localJSAppPath;
+  static String get localJSAppPath => _localJSAppPath;
+
   /// 获取对外接口类MXJSFlutter。
   /// MXFlutter的大部分接口通过MXJSFlutter来调用。
   static MXJSFlutter getInstance() {
@@ -102,6 +106,8 @@ abstract class MXJSFlutter {
         await canDefineDebugJSBundlePath()) {
       realJSAppPath = debugJSBundlePath;
     }
+
+    _localJSAppPath = realJSAppPath;
 
     // 加载main.js。
     _callNativeRunJSApp(

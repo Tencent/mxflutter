@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:flutter/material.dart';
+import 'package:mxflutter/mxflutter.dart';
 import 'package:mxflutter/src/mirror/mx_mirror.dart';
 import 'package:flutter/src/widgets/image.dart';
 import 'dart:async';
@@ -176,7 +178,7 @@ var _image_network = MXFunctionInvoke(
 var _image_file = MXFunctionInvoke(
   "Image.file",
   ({
-    File file,
+    dynamic file,
     Key key,
     dynamic scale = 1.0,
     dynamic frameBuilder,
@@ -197,29 +199,43 @@ var _image_file = MXFunctionInvoke(
     FilterQuality filterQuality = FilterQuality.low,
     int cacheWidth,
     int cacheHeight,
-  }) => Image.file(
-    file,
-    key: key,
-    scale: scale?.toDouble(),
-    frameBuilder: null,
-    errorBuilder: null,
-    semanticLabel: semanticLabel,
-    excludeFromSemantics: excludeFromSemantics,
-    width: width?.toDouble(),
-    height: height?.toDouble(),
-    color: color,
-    colorBlendMode: colorBlendMode,
-    fit: fit,
-    alignment: alignment,
-    repeat: repeat,
-    centerSlice: centerSlice,
-    matchTextDirection: matchTextDirection,
-    gaplessPlayback: gaplessPlayback,
-    isAntiAlias: isAntiAlias,
-    filterQuality: filterQuality,
-    cacheWidth: cacheWidth,
-    cacheHeight: cacheHeight,
-  ),
+  }) {
+    var imageFile;
+    if (file is File) {
+      imageFile = file;
+    } else if (file is Map) {
+      String hostWidgetName = _image_file.buildOwner.host?.widget?.name;
+      if (hostWidgetName == null) return Icon(Icons.report_problem);
+      imageFile = File(MXJSFlutter.localJSAppPath +
+          Platform.pathSeparator +
+          hostWidgetName +
+          Platform.pathSeparator +
+          file['default']);
+    }
+    return Image.file(
+      imageFile,
+      key: key,
+      scale: scale?.toDouble(),
+      frameBuilder: null,
+      errorBuilder: null,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      width: width?.toDouble(),
+      height: height?.toDouble(),
+      color: color,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  },
   [
     "file",
     "key",

@@ -24,6 +24,9 @@ class MXBuildOwner {
   /// MXBuildOwner 组成BoNodeTree管理MXJsWidget的build逻辑。
   MXBuildOwner _parent;
 
+  /// MXBuildOwner hostWidget对应的owner。
+  MXBuildOwner _host;
+
   /// MXBuildOwner 当前owwner的子owner。
   Map<String, MXBuildOwner> _children = {};
 
@@ -33,8 +36,11 @@ class MXBuildOwner {
   /// MXBuildOwner 通过持有MXJSWidget的 Element来驱动后续Widget的更新。
   Element _jsWidgetElement;
 
-  MXBuildOwner(Element jsWidgetElement) {
+  MXBuildOwner(Element jsWidgetElement, {bool isHost = false}) {
     _jsWidgetElement = jsWidgetElement;
+    if (isHost) {
+      _host = this;
+    }
   }
 
   /// MXFlutterApp 通过rootBuildOwner节点操纵JSWidgetTree
@@ -45,6 +51,9 @@ class MXBuildOwner {
 
   /// 获取对应widget。
   MXJSWidgetBase get widget => _jsWidgetElement?.widget as MXJSWidgetBase;
+
+  /// 获取hostBuildOwner。
+  MXBuildOwner get host => _host;
 
   /// 获取对应widget的widgetID。
   String get ownerWidgetId => widget?.widgetID;
@@ -133,6 +142,9 @@ class MXBuildOwner {
 
     _children[child.ownerWidgetId] = child;
     child._parent = this;
+    if (_host != null) {
+      child._host = _host;
+    }
   }
 
   /// 通过key查找widget。FIXME: 快速多次重复调用。
