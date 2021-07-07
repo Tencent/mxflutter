@@ -135,6 +135,19 @@ class MXFlutterExampleHome extends StatelessWidget {
               },
             ),
             ListTile(
+              leading: Icon(Icons.book),
+              trailing: Icon(Icons.arrow_right),
+              title: Text('Dynamic asset'),
+              subtitle: Text('知乎动态资源加载示例'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            MXJSPageWidget(jsWidgetName: "cp-zhihu")));
+              },
+            ),
+            ListTile(
               leading: Icon(
                 Icons.refresh,
                 semanticLabel: 'ReloadJSApp',

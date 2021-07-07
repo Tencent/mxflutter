@@ -140,7 +140,8 @@ class MXJSStatefulWidget extends StatefulWidget with MXJSWidgetBase {
   MXJSStatefulElement createElement() {
     assert(parentBuildOwnerNode != null);
     var element = MXJSStatefulElement(this);
-    element.buildOwnerNode = MXBuildOwner(element);
+    MXBuildOwner buildOwnerNode = MXBuildOwner(element, isHost:isHostWidget);
+    element.buildOwnerNode = buildOwnerNode;
     parentBuildOwnerNode.addChild(element.buildOwnerNode);
     return element;
   }

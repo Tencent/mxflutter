@@ -15,3 +15,7 @@ example/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.
 example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
 example/ios/Runner.xcworkspace/contents.xcworkspacedata
 example/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+
+node_modules/
+package-lock.json
